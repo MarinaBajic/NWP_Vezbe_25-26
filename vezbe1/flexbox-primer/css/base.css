@@ -1,0 +1,24 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #095138;
+}
+
+.container {
+	border: 2px solid red;
+	margin: 16px;
+	/* height: 1024px; */
+}
+
+.item {
+	background-color: #d09d10;
+	border: 2px solid blue;
+	padding: 36px;
+	/* margin: 28px; */
+	color: #095138;
+	font-size: 36px;
+}

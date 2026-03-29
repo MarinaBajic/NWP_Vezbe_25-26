@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(
+    90deg,
+    rgba(178, 125, 223, 1) 0%,
+    rgba(218, 174, 244, 1) 48%,
+    rgba(233, 212, 244, 1) 100%
+  );
+}
