@@ -1,6 +1,6 @@
 .container {
 	/* height: 500px; */
-	/* display: flex; */
+	display: flex;
 
 	/* Flex directions*/
 	flex-direction: row;
@@ -35,6 +35,8 @@
 	/* align-content: space-between; */
 	/* align-content: space-around; */
 	/* align-content: space-evenly; */
+
+	/* gap: 20px; */
 }
 
 .item {
