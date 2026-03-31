@@ -1,0 +1,44 @@
+.footer {
+	background-color: #2f2f2f;
+	color: #eee;
+	display: flex;
+	padding: 6rem 10rem;
+}
+
+.footer h3 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+.footer__info {
+	display: flex;
+	flex-direction: column;
+	gap: 0.8rem;
+	flex: 1;
+}
+
+.footer__info p {
+	margin-top: 0.8rem;
+	font-size: 1.4rem;
+}
+
+.footer__socials {
+	flex: 1;
+}
+
+.footer__icons {
+	display: flex;
+	gap: 1.6rem;
+}
+
+.icon-link {
+	transition: transform 0.3s ease;
+}
+
+.icon-link:hover {
+	transform: translateY(-5px);
+}
+
+.icon-img {
+	width: 4rem;
+}
