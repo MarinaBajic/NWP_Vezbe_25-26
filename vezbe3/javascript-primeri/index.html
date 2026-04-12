@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Veterinarska klinika</title>
+	</head>
+	<body>
+		<h1>Veterinarska klinika</h1>
+
+		Ime:
+		<input id="animalName" />
+
+		Vrsta:
+		<select id="animalSpecies">
+			<option value="dog">Pas</option>
+			<option value="cat">Mačka</option>
+			<option value="parrot">Papagaj</option>
+		</select>
+
+		<button onclick="addAnimal()">Dodaj životinju</button>
+
+		<h2>Lista svih životinja</h2>
+		<ul id="animalList"></ul>
+
+		<script>
+			const animals = [];
+
+			const addAnimal = () => {
+				const nameInput = document.getElementById("animalName");
+				const speciesSelect = document.getElementById("animalSpecies");
+				console.log(nameInput);
+				console.log(speciesSelect);
+
+				const name = nameInput.value.trim();
+				const species = speciesSelect.value;
+				console.log(name);
+				console.log(species);
+
+				if (name === "") return;
+
+				animals.push({ name, species });
+				nameInput.value = ""
+				updateAnimalList();
+			};
+
+			const updateAnimalList = () => {
+				const list = document.getElementById("animalList");
+				list.innerHTML = "";
+				animals.forEach((animal, index) => {
+					const li = document.createElement("li");
+					li.innerHTML = `${animal.name} (${animal.species}) `;
+
+					const deleteBtn = document.createElement("button");
+					deleteBtn.innerHTML = "Delete";
+					deleteBtn.onclick = () => {
+						deleteAnimal(index);
+					};
+
+					li.appendChild(deleteBtn);
+					list.appendChild(li);
+				});
+			};
+
+			const deleteAnimal = (index) => {
+				animals.splice(index, 1);
+				updateAnimalList();
+				console.log(`Deleted animal at index: ${index}`);
+			};
+		</script>
+	</body>
+</html>
