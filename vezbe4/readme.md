@@ -1,6 +1,6 @@
 ## Exercise 4 - Angular Components
 
-You can find the implementation of the tasks in the directory `vezbe4/ecommerce`.
+You can find the implementation of the tasks in the directory `vezbe4/pet-store`.
 
 Setup instructions for installing and running Angular can be found in the file `vezbe4/angular_setup.md`.
 
@@ -23,7 +23,7 @@ You can initialize the component with some default values. Use any place‐holde
 
 1. Clone this repository to your local machine.
 2. Make sure you have followed all of the instructions in `vezbe4/angular_setup.md` to setup nvm, npm, node and angular cli.
-3. Open a terminal and navigate to the root directory of the angular project (e.g. `vezbe4/ecommerce`).
+3. Open a terminal and navigate to the root directory of the angular project (e.g. `vezbe4/pet-store`).
 4. Run `npm install` to install all dependencies.
 5. If you encounter any vulnerabilities, run `npm audit fix` to fix them.
 6. Run `ng serve` to start the server.
