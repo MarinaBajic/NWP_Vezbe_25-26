@@ -1,29 +1,25 @@
-## Exercise 4 - Angular Components
+## Praktične vežbe 4
 
-You can find the implementation of the tasks in the directory `vezbe4/pet-store`.
+Implementacija zadatka se nalazi u direktorijumu `vezbe4/pet-store`.
 
-Setup instructions for installing and running Angular can be found in the file `vezbe4/angular_setup.md`.
+Uputstvo za instaliranje i pokretanje Angular aplikacija se nalazi u datoteci `vezbe4/angular_setup.md`.
 
-In this exercise we will implement a simple e-commerce website and demonstrate the use of **components**, **data binding** (text interpolation and property binding), **event binding** and **pipes**.
+Zadatak je da se implementira jednostavan _Pet Store_ veb-sajt koji koristi sledeće Angular koncepte: **components**, **data binding** (_text interpolation_ i _property binding_), **event binding** i **pipes**.
 
-### Pet Store Website
+### Pet Store veb-sajt
 
-We are going to build a Pet Store website following these steps:
+1. Napraviti novi projekat sa nazivom `pet-store`.
+2. Kreirati **komponentu** za prikaz jednog proizvoda.
+3. Ta komponenta treba da prikazuje naziv, cenu (koristiti **pipe** za valutu) i sliku proizvoda. Komponenta se može inicijalizovati nekim podrazumevanim vrednostima. Koristiti bilo koju _placeholder_ sliku (slika treba da bude sačuvana kao URL sa relativnom putanjom do slike).
+4. Istaknuti ceo element drugom bojom ukoliko je proizvod na sniženju. Informacija da li je proizvod na sniženju može biti atribut samog proizvoda.
+5. Dodati dugmiće za povećavanje i smanjivanje količine proizvoda u korpi. Količina proizvoda u korpi (svaki proizvod posebno) treba da bude vidljiva u korisničkom interfejsu. Onemogućiti dugme za smanjivanje količine ukoliko je količina već nula.
+6. Organizovati podatke o proizvodu na bolji način tako što će proizvod biti predstavljen kao **klasa** i zatim korišćen u komponenti.
 
-1. Make a new project called `pet-store`.
-2. Create a component to display a single product.
-3. The product component should display a name, price (use a pipe for currency), and image for the product.
-You can initialize the component with some default values. Use any place‐holder image you want (the image should be stored as a url with a relative path to the image).
-4. Highlight the entire element in a different color if the product is on sale. Whether the product is on sale can be an attribute of the product itself.
-5. Add buttons to increase and decrease the quantity of the product in the cart. The quantity in the cart (this is related to product, so how much of each product is added to cart) should be visible in the UI. Disable the button for decrement if the quantity is already zero.
-6. Organize the product data in a better way, by representing the product as a class and then use it in the component.
+### Kako pokrenuti projekat?
 
-
-### How to run this project?
-
-1. Clone this repository to your local machine.
-2. Make sure you have followed all of the instructions in `vezbe4/angular_setup.md` to setup nvm, npm, node and angular cli.
-3. Open a terminal and navigate to the root directory of the angular project (e.g. `vezbe4/pet-store`).
-4. Run `npm install` to install all dependencies.
-5. If you encounter any vulnerabilities, run `npm audit fix` to fix them.
-6. Run `ng serve` to start the server.
+1. Klonirati repozitorijum na lokalnu mašinu.
+2. Ispratiti sva uputstva iz `vezbe4/angular_setup.md` za podešavanje nvm, npm, node i angular cli.
+3. Otvoriti terminal i navigirati se do root direktorijuma Angular projekta (npr. `vezbe4/pet-store`).
+4. Izvršiti `npm install` kako bi se instalirale sve zavisnosti.
+5. Ako postoje ranjivosti, izvršiti `npm audit fix` kako bi se ispravile.
+6. Izvršiti `ng serve` da se pokrene server.
