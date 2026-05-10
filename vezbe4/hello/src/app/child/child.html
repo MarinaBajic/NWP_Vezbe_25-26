@@ -1,0 +1,6 @@
+<!-- <p [class]="name.length > 6 ? 'small-text' : 'big-text'">{{name}}</p> -->
+<p class="small-text" [class.big-text]="name.length > 6">{{name}}</p>
+<p>{{date | date:'medium'}}</p>
+<img src="#" [alt]="name">
+
+<button (click)="sayHello()">Hello</button>
