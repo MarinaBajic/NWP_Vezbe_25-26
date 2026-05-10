@@ -15,19 +15,19 @@ Before installing Angular CLI we need to activate the node version that we want 
 
 We will use version 24.14.1 of node.
 
-``` 
+```bash
 nvm use 24.14.1
 ```
 
 You can check which version of node you are using by running:
 
-```
+```bash
 node -v
 ```
 
 and for npm:
 
-```
+```bash
 npm -v
 ```
 
@@ -35,24 +35,24 @@ npm -v
 
 We will install and use **Angular version 21**.
 
-```
+```bash
 npm install -g @angular/cli@21
 ```
 
 For checking all available commands run:
 
-```
+```bash
 ng help
 ```
 
 ### Check Angular CLI version
-```
+```bash
 ng version
 ```
 
 ## Creating Angular project
 
-```
+```bash
 ng new my-project
 ```
 
@@ -70,7 +70,7 @@ This should create a new folder called *my-project* with all the necessary files
 ### Running Angular project
 
 To run Angular project in development mode, *go to the project folder* and run:
-```
+```bash
 ng serve
 ```
 This will start a development server on port 4200. You can access the application by going to http://localhost:4200 address in any browser.
@@ -84,7 +84,7 @@ To stop running an Angular project press **Ctrl+C** in the terminal
 
 In order to create a new **component**, go to the root directory of the project (my-project) and run:
 
-```
+```bash
 ng generate component my-component
 ```
 
@@ -99,6 +99,6 @@ This will create a new folder called **my-component** inside the **my-project/sr
 
 In order to create a new **class** called *my-class* inside a directory named **model** (so that the code is clean), go to the root directory of the project and run:
 
-```
+```bash
 ng generate class model/my-class
 ```
