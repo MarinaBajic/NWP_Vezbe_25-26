@@ -1,4 +1,4 @@
-## Pete praktične vežbe
+## Praktične vežbe 5
 
 Implementacija zadatka se nalazi u direktorijumu `vezbe5/pet-store`.
 

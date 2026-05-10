@@ -1,4 +1,4 @@
-## Vežbe 1 - CSS i Flexbox
+## Praktične vežbe 1 - CSS i Flexbox
 
 Ove vežbe se sastoje od dva mala projekta:
 

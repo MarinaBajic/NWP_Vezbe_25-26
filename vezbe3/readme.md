@@ -1,1 +1,1 @@
-## Vežbe 3 - JavaScript i TypeScript
+## Praktične vežbe 3 - JavaScript i TypeScript
