@@ -1,0 +1,9 @@
+<div>
+  @for (product of products; track product.id; let i = $index) {
+    <app-product [product]="product" (changeQuantityEvent)="changeQuantity($event)">
+      <p>This is item number {{ i + 1 }}</p>
+    </app-product>
+  }
+</div>
+<p>There are in total {{ sumProductsInCart }} products in your cart.</p>
+<p>Final price to pay: {{ totalPrice | currency: 'EUR' }}</p>

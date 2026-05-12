@@ -1,0 +1,13 @@
+<div class="product" [ngClass]="productClasses">
+  <img [src]="product().imageUrl" [alt]="product().name" />
+  <h2>{{ product().name }}</h2>
+  <p [ngStyle]="productStyles">{{ product().price | currency: 'EUR' }}</p>
+  <div class="btns">
+    @if (canDecreaseQuantity()) {
+      <button (click)="decreaseQuantity()">-</button>
+    }
+    <span>{{ product().quantityInCart }}</span>
+    <button (click)="increaseQuantity()">+</button>
+  </div>
+  <ng-content></ng-content>
+</div>
