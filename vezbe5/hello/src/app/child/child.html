@@ -1,0 +1,10 @@
+<div class="card">
+  <!-- <p class="small-text" [class.big-text]="name().length > 6">{{ name() }}</p> -->
+  <p class="small-text" [ngClass]="{'big-text': name().length > 6}">{{ name() }}</p>
+  <p>{{ date | date: 'medium' }}</p>
+  <img src="#" [alt]="name()" />
+  <br />
+  <button (click)="sayHello()">Hello</button>
+  
+  <ng-content></ng-content>
+</div>

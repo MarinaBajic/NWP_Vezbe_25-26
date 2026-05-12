@@ -1,0 +1,9 @@
+<div class="parent">
+  @for (ime of imena; track $index) {
+    <app-child [name]="ime" (sayHelloEvent)="sayHelloFromApp($event)">
+      Some Content
+    </app-child>
+  }
+</div>
+
+<router-outlet />
