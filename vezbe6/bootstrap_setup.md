@@ -15,7 +15,7 @@ Atfer installation you should be able to see bootstrap folder in the node_module
 You can also specify or check the version of bootstrap that you want to install. To check installed version of bootstrap, use the following command.
 
 ```bash
-npm list bootstrapS
+npm list bootstrap
 ```
 
 ## Step 2: Install Popper.js
