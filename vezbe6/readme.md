@@ -1,6 +1,6 @@
 ## Praktične vežbe 6 - Bootstrap uz Angular, Template-driven Forme
 
-Implementacije zadataka se nalaze u direktorijumima `vezbe6/pet-store-with-bootstrap` i `vezbe6/template-driven-forms-example`.
+Implementacije zadataka se nalaze u direktorijumima `vezbe6/pet-store-with-bootstrap` i `vezbe6/template-driven-form`.
 
 Uputstvo za podešavanje _Bootstrap_-a unutar Angular aplikacije se nalazi u datoteci `vezbe6/bootstrap_setup.md`.
 
@@ -19,9 +19,9 @@ Sledeći projekat treba da sadrži jednostavnu **template-driven** formu koja ko
 5. Dodati _submit_ i _reset_ dugmiće u formu. _Submit_ dugme treba da bude onemogućeno ukoliko korisnik nije prihvatio uslove.
 6. Povezati input polja sa odgovarajućim atributima `Product` klase pomoću **ngModel**. Koristiti **jednosmerno** i **dvosmerno** povezivanje podataka. Naziv proizvoda uvek treba da bude ispisan velikim slovima.
 7. Koristiti CSS klase za stanje forme:
-    - Obojiti polje za unos naziva zelenom bojom ako je validno, a crvenom ako nije.
-    - Obojiti polje za unos URL-a slike zelenom bojom ako je nepromenjeno, a crvenom ukoliko je promenjeno.
-    - Obojiti polje za unos cene zelenom bojom ukoliko nije posećeno, a crvenom ukoliko jeste.
+    - Uokviriti polje za unos naziva zelenom bojom ako je validno, a crvenom ako nije.
+    - Uokviriti polje za unos URL-a slike zelenom bojom ako je nepromenjeno, a crvenom ukoliko je promenjeno.
+    - Uokviriti polje za unos cene zelenom bojom ukoliko nije posećeno, a crvenom ukoliko jeste.
 
 ### Kako pokrenuti projekat?
 
