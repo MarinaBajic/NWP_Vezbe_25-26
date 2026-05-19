@@ -1,0 +1,49 @@
+<div class="border border-dark-subtle rounded p-5">
+  <form #profileForm="ngForm" (ngSubmit)="onSubmit(profileForm)">
+    <div class="mb-3">
+      <label for="profile-name" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="profile-name"
+        name="ime"
+        [(ngModel)]="profile.name"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="profile-surname" class="form-label">Surname</label>
+      <input
+        type="text"
+        class="form-control"
+        id="profile-surname"
+        name="prezime"
+        [(ngModel)]="profile.surname"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="profile-username" class="form-label">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="profile-username"
+        name="korisnickoIme"
+        [ngModel]="profile.username"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="profile-password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="profile-password"
+        name="lozinka"
+        ngModel
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <br />
+  {{ profile | json }}
+</div>

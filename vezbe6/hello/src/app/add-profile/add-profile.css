@@ -1,0 +1,12 @@
+#profile-name.ng-invalid,
+#profile-surname.ng-invalid {
+  border-color: red;
+}
+
+#profile-username.ng-touched {
+  border-color: royalblue;
+}
+
+#profile-password.ng-dirty {
+  border-color: gold;
+}
