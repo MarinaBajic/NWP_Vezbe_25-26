@@ -1,6 +1,6 @@
 ## Praktične vežbe 6 - Bootstrap uz Angular, Template-driven Forme
 
-Implementacije zadataka se nalaze u direktorijumima `vezbe6/pet-store-with-bootstrap` i `vezbe6/template-driven-form`.
+Implementacije zadataka se nalaze u direktorijumima `vezbe6/pet-store-with-bootstrap` i `vezbe6/pet-store-template-driven-form`.
 
 Uputstvo za podešavanje _Bootstrap_-a unutar Angular aplikacije se nalazi u datoteci `vezbe6/bootstrap_setup.md`.
 
