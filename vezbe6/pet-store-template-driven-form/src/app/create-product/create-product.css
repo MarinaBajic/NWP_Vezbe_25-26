@@ -1,0 +1,11 @@
+#product-name.ng-valid,
+#product-image-url.ng-pristine,
+#product-price.ng-untouched {
+	border-color: green;
+}
+
+#product-name.ng-invalid,
+#product-image-url.ng-dirty,
+#product-price.ng-touched {
+	border-color: red;
+}

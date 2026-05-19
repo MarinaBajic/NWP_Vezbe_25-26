@@ -1,0 +1,86 @@
+<div class="card p-5 m-4">
+  <form #unosProizvodaForma="ngForm" (ngSubmit)="submit(unosProizvodaForma)">
+    <div class="mb-3">
+      <label for="product-name" class="form-label">Product Name</label>
+      <input
+        id="product-name"
+        type="text"
+        class="form-control"
+        name="naziv"
+        [ngModel]="product.name"
+        (ngModelChange)="nameToUppercase($event)"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="product-image-url" class="form-label">Image URL</label>
+      <input
+        id="product-image-url"
+        type="text"
+        class="form-control"
+        name="slika"
+        [(ngModel)]="product.imageUrl"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="product-price" class="form-label">Price</label>
+      <input
+        id="product-price"
+        type="number"
+        class="form-control"
+        name="cena"
+        [(ngModel)]="product.price"
+      />
+    </div>
+    <div class="mb-3">
+      <div class="form-check">
+        <input
+          class="form-check-input border-secondary"
+          type="radio"
+          name="tip"
+          id="type-new"
+          [(ngModel)]="product.type"
+          value="new"
+		  checked
+        />
+        <label class="form-check-label" for="type-new"> New </label>
+      </div>
+      <div class="form-check">
+        <input
+          id="type-used"
+          type="radio"
+          class="form-check-input border-secondary"
+          name="tip"
+          [(ngModel)]="product.type"
+          value="used"
+        />
+        <label class="form-check-label" for="type-used"> Used </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input border-secondary"
+          type="radio"
+          name="tip"
+          id="type-unused"
+          [(ngModel)]="product.type"
+          value="unused"
+        />
+        <label class="form-check-label" for="type-unused"> Unused </label>
+      </div>
+    </div>
+    <div class="mb-3 form-check">
+      <input
+        id="agreement"
+        type="checkbox"
+        class="form-check-input border-secondary"
+        name="potvrda"
+        [(ngModel)]="confirmed"
+      />
+      <label class="form-check-label" for="agreement">The data that is provided is correct</label>
+    </div>
+    <div class="d-flex justify-content-between gap-4 mt-5">
+      <button class="btn btn-secondary" (click)="reset()">Reset</button>
+      <button type="submit" class="btn btn-primary w-100" [disabled]="!confirmed">Submit</button>
+    </div>
+  </form>
+</div>
