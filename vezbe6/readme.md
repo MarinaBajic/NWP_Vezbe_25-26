@@ -1,4 +1,4 @@
-## Praktične vežbe 6 - Bootstrap uz Angular, Template-driven Forme
+## Praktične vežbe 6 - Bootstrap uz Angular, Template-driven forme
 
 Implementacije zadataka se nalaze u direktorijumima `vezbe6/pet-store-with-bootstrap` i `vezbe6/pet-store-template-driven-form`.
 
@@ -8,7 +8,7 @@ Uputstvo za podešavanje _Bootstrap_-a unutar Angular aplikacije se nalazi u dat
 
 Stilizovati _Pet Store_ veb-sajt sa prethodnih vežbi pomoću **Bootstrap**-a umesto običnog _CSS_-a.
 
-### Template-driven Forma
+### Template-driven forma
 
 Sledeći projekat treba da sadrži jednostavnu **template-driven** formu koja koristi **ngModel** direktivu za jednosmerno i dvosmerno povezivanje podataka.
 
