@@ -1,5 +1,7 @@
 ## Praktične vežbe 7 - Template-driven forme
 
+Implementacija zadatka se nalazi u direktorijumu `vezbe7/pet-store-template-driven-form`.
+
 ### Pet Store Template-driven forma
 
 Predstojeći zadatak nadograđuje _Add new Product_ formu sa prethodnih vežbi koristeći sledeće koncepte: **ngForm**, **ngModelGroup**, **template reference variables** i **html pattern validation** sa **regex izrazima**.
