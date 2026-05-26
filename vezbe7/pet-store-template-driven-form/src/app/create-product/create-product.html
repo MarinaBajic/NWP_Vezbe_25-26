@@ -1,0 +1,176 @@
+<div class="card p-5 m-4">
+  <form #unosProizvodaForma="ngForm" (ngSubmit)="submit(unosProizvodaForma)">
+    <div ngModelGroup="osnovneInformacije" #osnovneInfo="ngModelGroup">
+      <div class="mb-3">
+        <label for="product-name" class="form-label">Product Name</label>
+        <input
+          #ime="ngModel"
+          id="product-name"
+          type="text"
+          class="form-control"
+          name="naziv"
+          [ngModel]="product.name"
+          (ngModelChange)="nameToUppercase($event)"
+          required
+          minlength="3"
+          maxlength="20"
+          aria-describedby="product-name-alert"
+        />
+        @if (ime.invalid && (ime.dirty || ime.touched)) {
+          <span id="product-name-alert" class="text-danger">
+            @if (ime.errors?.['required']) {
+              Product name is required.
+            } @else if (ime.errors?.['minlength']) {
+              Product name must be at least 3 characters long.
+            }
+          </span>
+        }
+      </div>
+      <div class="mb-3">
+        <label for="product-code" class="form-label">Product Code</label>
+        <input
+          #sifra="ngModel"
+          id="product-code"
+          type="text"
+          class="form-control"
+          name="sifra"
+          [(ngModel)]="product.code"
+          required
+          pattern="^PS-[A-Za-z]+-[0-9]{3}$"
+        />
+        <!-- @if (sifra.invalid && unosProizvodaForma.submitted) { -->
+        @if (sifra.invalid && (sifra.dirty || sifra.touched)) {
+          <span class="text-danger">
+            @if (sifra.errors?.['required']) {
+              Product code is required.
+            } @else if (sifra.errors?.['pattern']) {
+              Product code needs to follow a defined format.
+            }
+          </span>
+        }
+      </div>
+      <div class="mb-3">
+        <label for="product-image-url" class="form-label">Image URL</label>
+        <input
+          id="product-image-url"
+          type="text"
+          class="form-control"
+          name="slika"
+          [(ngModel)]="product.imageUrl"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="product-price" class="form-label">Price</label>
+        <input
+          id="product-price"
+          type="number"
+          class="form-control"
+          name="cena"
+          [(ngModel)]="product.price"
+          min="0"
+        />
+      </div>
+      <div class="mb-3">
+        <div class="form-check">
+          <input
+            class="form-check-input border-secondary"
+            type="radio"
+            name="tip"
+            id="type-new"
+            [ngModel]="defaultType"
+            value="new"
+          />
+          <label class="form-check-label" for="type-new"> New </label>
+        </div>
+        <div class="form-check">
+          <input
+            id="type-used"
+            type="radio"
+            class="form-check-input border-secondary"
+            name="tip"
+            [ngModel]="defaultType"
+            value="used"
+          />
+          <label class="form-check-label" for="type-used"> Used </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input border-secondary"
+            type="radio"
+            name="tip"
+            id="type-unused"
+            [ngModel]="defaultType"
+            value="unused"
+          />
+          <label class="form-check-label" for="type-unused"> Unused </label>
+        </div>
+      </div>
+    </div>
+    @if (osnovneInfo.value?.tip === 'new') {
+      <div ngModelGroup="nov">
+        <div class="mb-3">
+          <label for="product-manufacturer" class="form-label">Manufacturer</label>
+          <select name="proizvodjac" id="product-manufacturer" class="form-select" ngModel>
+            <option value="">Select Manufacturer</option>
+            @for (manufacturer of manufacturers; track manufacturer) {
+              <option [value]="manufacturer">{{ manufacturer }}</option>
+            }
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="product-in-stock" class="form-label">In Stock</label>
+          <input id="product-in-stock" type="number" class="form-control" name="naStanju" ngModel />
+        </div>
+      </div>
+    } @else if (osnovneInfo.value?.tip === 'used') {
+      <div ngModelGroup="koristen">
+        <div class="mb-3">
+          <label for="product-condition" class="form-label">Condition</label>
+          <textarea id="product-condition" class="form-control" name="stanje" ngModel></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="product-date-bought" class="form-label">Date Bought</label>
+          <input
+            id="product-date-bought"
+            type="date"
+            class="form-control"
+            name="datumKupovine"
+            ngModel
+          />
+        </div>
+      </div>
+    } @else if (osnovneInfo.value?.tip === 'unused') {
+      <div ngModelGroup="nekoristen">
+        <div class="mb-3">
+          <label for="product-condition" class="form-label">Condition</label>
+          <textarea id="product-condition" class="form-control" name="stanje" ngModel></textarea>
+        </div>
+        <div class="mb-3 form-check">
+          <input
+            id="product-box"
+            type="checkbox"
+            class="form-check-input border-secondary"
+            name="kutija"
+            ngModel
+          />
+          <label for="product-box" class="form-check-label">Original box</label>
+        </div>
+      </div>
+    }
+    <div class="mb-3 form-check">
+      <input
+        id="agreement"
+        type="checkbox"
+        class="form-check-input border-secondary"
+        name="potvrda"
+      />
+      <label class="form-check-label" for="agreement">The provided data is correct</label>
+    </div>
+    <div class="d-flex justify-content-between gap-4 mt-5">
+      <button class="btn btn-secondary" (click)="reset(unosProizvodaForma)">Reset</button>
+      <button type="submit" class="btn btn-primary w-100" [disabled]="unosProizvodaForma.invalid">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
