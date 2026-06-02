@@ -14,7 +14,7 @@ Sledeći projekat treba da sadrži jednostavnu **template-driven** formu koja ko
 
 1. Napraviti novi projekat.
 2. Napraviti klasu `Product` sa atributima `name`, `imageUrl`, `price` i `type` (_new_, _used_ ili _unused_).
-3. Napraviti komponentu `create-product` sa **template-driven** formom za dodavanje novog proizvoda. Forma treba da sadrži polja za unos svih atributa klase `Product`. Polje za unos imena (`name`) treba da bude obavezno.
+3. Napraviti komponentu `create-product` sa **template-driven** formom za dodavanje novog proizvoda. Forma treba da sadrži polja za unos svih atributa klase `Product`. Polje za unos naziva (`name`) treba da bude obavezno.
 4. Dodati _checkbox_ za prihvatanje uslova.
 5. Dodati _submit_ i _reset_ dugmiće u formu. _Submit_ dugme treba da bude onemogućeno ukoliko korisnik nije prihvatio uslove.
 6. Povezati input polja sa odgovarajućim atributima `Product` klase pomoću **ngModel**. Koristiti **jednosmerno** i **dvosmerno** povezivanje podataka. Naziv proizvoda uvek treba da bude ispisan velikim slovima.
