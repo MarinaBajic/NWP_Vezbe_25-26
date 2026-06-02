@@ -1,5 +1,7 @@
 ## Praktične vežbe 8 - Reactive forme
 
+Implementacija zadatka se nalazi u direktorijumu `vezbe8/pet-store-reactive-form`.
+
 ### Pet Store Reactive forma
 
 1. Napraviti novi projekat.
