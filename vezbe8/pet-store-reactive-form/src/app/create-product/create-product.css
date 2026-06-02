@@ -1,0 +1,6 @@
+#product-name.ng-invalid.ng-touched,
+#product-name.ng-invalid.ng-dirty,
+#product-price.ng-invalid.ng-touched,
+#product-price.ng-invalid.ng-dirty {
+  border-color: red;
+}

@@ -1,0 +1,79 @@
+<div class="card p-5 m-4">
+  <form [formGroup]="unosProizvodaForma" (ngSubmit)="submit()">
+    <div class="mb-3">
+      <label for="product-name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="product-name" formControlName="naziv" required />
+      @if (getterZaNaziv?.invalid && (getterZaNaziv?.touched || getterZaNaziv?.dirty)) {
+        <span class="text-danger">
+          @if (getterZaNaziv?.hasError('required')) {
+            Product name is required.
+          } @else if (
+            getterZaNaziv?.hasError('minlength') || getterZaNaziv?.hasError('maxlength')
+          ) {
+            Product name must be between 3 and 20 characters.
+          }
+        </span>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="product-image-url" class="form-label">Image URL</label>
+      <input type="text" class="form-control" id="product-image-url" formControlName="slika" />
+    </div>
+    <div class="mb-3">
+      <label for="product-price" class="form-label">Price</label>
+      <input type="number" class="form-control" id="product-price" formControlName="cena" />
+      @if (getterZaCenu?.hasError('min')) {
+        <span class="text-danger">Product price can't be a negative number.</span>
+      }
+    </div>
+    <div class="mb-3">
+      <div class="form-check">
+        <input
+          class="form-check-input border-secondary"
+          type="radio"
+          name="tip"
+          id="type-new"
+          value="new"
+          formControlName="tip"
+        />
+        <label class="form-check-label" for="type-new"> New </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input border-secondary"
+          type="radio"
+          name="tip"
+          id="type-used"
+          value="used"
+          formControlName="tip"
+        />
+        <label class="form-check-label" for="type-used"> Used </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input border-secondary"
+          type="radio"
+          name="tip"
+          id="type-unused"
+          value="unused"
+          formControlName="tip"
+        />
+        <label class="form-check-label" for="type-unused"> Unused </label>
+      </div>
+    </div>
+    <div class="mb-3" formArrayName="kljucneReci">
+      <button type="button" class="btn btn-outline-secondary" (click)="addKeyword()">
+        + Add keyword
+      </button>
+      <div class="my-3">
+        @for (rec of getterZaKljucneReci.controls; track $index; let i = $index) {
+          <label for="keyword-{{ i }}" class="form-label">Keyword:</label>
+          <input id="keyword-{{ i }}" type="text" class="form-control" [formControlName]="i" />
+        }
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="unosProizvodaForma.invalid">
+      Submit
+    </button>
+  </form>
+</div>
