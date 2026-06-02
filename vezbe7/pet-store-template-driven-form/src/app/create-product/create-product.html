@@ -4,7 +4,7 @@
       <div class="mb-3">
         <label for="product-name" class="form-label">Product Name</label>
         <input
-          #ime="ngModel"
+          #naziv="ngModel"
           id="product-name"
           type="text"
           class="form-control"
@@ -16,11 +16,11 @@
           maxlength="20"
           aria-describedby="product-name-alert"
         />
-        @if (ime.invalid && (ime.dirty || ime.touched)) {
+        @if (naziv.invalid && (naziv.dirty || naziv.touched)) {
           <span id="product-name-alert" class="text-danger">
-            @if (ime.errors?.['required']) {
+            @if (naziv.errors?.['required']) {
               Product name is required.
-            } @else if (ime.errors?.['minlength']) {
+            } @else if (naziv.errors?.['minlength']) {
               Product name must be at least 3 characters long.
             }
           </span>
