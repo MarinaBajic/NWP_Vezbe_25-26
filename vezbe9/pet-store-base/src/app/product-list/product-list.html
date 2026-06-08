@@ -3,5 +3,3 @@
     <app-product [product]="product" (changeQuantityEvent)="changeQuantity($event)" />
   }
 </div>
-<p>There are in total {{ sumProductsInCart }} products in your cart.</p>
-<p>Final price to pay: {{ totalPrice | currency: 'EUR' }}</p>

@@ -1,20 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductModel } from '../model/product-model';
 import { Product } from '../product/product';
-import { CurrencyPipe } from '@angular/common';
 import { ProductQuantityChange } from '../model/product-quantity-change';
 
 @Component({
   selector: 'app-product-list',
-  imports: [Product, CurrencyPipe],
+  imports: [Product],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css',
 })
 export class ProductList implements OnInit {
 
   products: Array<ProductModel> = Array();
-  sumProductsInCart: number = 0;
-  totalPrice: number = 0;
 
   ngOnInit() {
     this.products.push(new ProductModel(1, 'Ball', 9.99, 'https://images.pexels.com/photos/27408124/pexels-photo-27408124.jpeg', false));
@@ -28,15 +25,7 @@ export class ProductList implements OnInit {
     })
 
     if (productToChange) {
-      if (productQuantityChange.increase) {
-        productToChange.quantityInCart++;
-        this.sumProductsInCart++;
-        this.totalPrice += productQuantityChange.product.price;
-      } else {
-        productToChange.quantityInCart--;
-        this.sumProductsInCart--;
-        this.totalPrice -= productQuantityChange.product.price;
-      }
+      productToChange.quantityInCart += productQuantityChange.amountToChange;
     }
     else {
       console.log("Something strange happened :(");

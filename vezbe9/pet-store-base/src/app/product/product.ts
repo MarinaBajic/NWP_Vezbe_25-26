@@ -28,11 +28,11 @@ export class Product implements OnInit {
   }
 
   increaseQuantity(): void {
-    this.changeQuantityEvent.emit({product: this.product(), increase: true});
+    this.changeQuantityEvent.emit({product: this.product(), amountToChange: 1});
   }
 
   decreaseQuantity(): void {
-    this.changeQuantityEvent.emit({product: this.product(), increase: false});
+    this.changeQuantityEvent.emit({product: this.product(), amountToChange: -1});
   }
 
   canDecreaseQuantity(): boolean {
