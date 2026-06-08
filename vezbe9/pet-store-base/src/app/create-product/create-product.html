@@ -1,0 +1,73 @@
+<div class="card p-5 m-4">
+  <h3 class="fw-bold">Add new Product</h3>
+  <span class="fs-5 text-danger">{{ message }}</span>
+  <form #productForm="ngForm" (ngSubmit)="createProduct(productForm)">
+    <div ngModelGroup="product">
+      <div class="mb-3">
+        <label for="product-name" class="form-label">Product Name</label>
+        <input
+          #productName="ngModel"
+          id="product-name"
+          type="text"
+          class="form-control"
+          name="name"
+          ngModel
+          required
+        />
+        @if (productName.invalid && (productName.touched || message)) {
+          <span class="text-danger">Product name is required.</span>
+        }
+      </div>
+      <div class="mb-3">
+        <label for="product-image-url" class="form-label">Image URL</label>
+        <input
+          id="product-image-url"
+          type="text"
+          class="form-control"
+          name="imageUrl"
+          #productImageUrl="ngModel"
+          ngModel
+          pattern="^http(s?)\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?$"
+          required
+        />
+        @if (productImageUrl.invalid && (productImageUrl.touched || message)) {
+          <span class="text-danger">
+            @if (productImageUrl.errors?.['required']) {
+              Product Image URL is required.
+            } @else if (productImageUrl.errors?.['pattern']) {
+              Product Image URL does not seem to be a valid URL.
+            }
+          </span>
+        }
+      </div>
+      <div class="mb-3">
+        <label for="product-price" class="form-label">Price</label>
+        <input
+          id="product-price"
+          type="number"
+          class="form-control"
+          name="price"
+          ngModel
+          #productPrice="ngModel"
+          step="0.01"
+          min="0"
+          required
+        />
+        @if (productPrice.invalid && (productPrice.touched || message)) {
+          <span class="text-danger">Product price is required.</span>
+        }
+      </div>
+      <div class="mb-3 form-check">
+        <input
+          id="product-sale"
+          type="checkbox"
+          class="form-check-input border-secondary"
+          [ngModel]="false"
+          name="isOnSale"
+        />
+        <label class="form-check-label" for="product-sale">On Sale</label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Submit</button>
+  </form>
+</div>
