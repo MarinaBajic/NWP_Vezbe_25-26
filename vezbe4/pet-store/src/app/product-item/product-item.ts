@@ -1,18 +1,18 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ProductModel } from '../model/product-model';
+import { Product } from '../model/product';
 
 @Component({
-  selector: 'app-product',
+  selector: 'app-product-item',
   imports: [CurrencyPipe],
-  templateUrl: './product.html',
-  styleUrl: './product.css',
+  templateUrl: './product-item.html',
+  styleUrl: './product-item.css',
 })
-export class Product implements OnInit {
-  product!: ProductModel;
+export class ProductItem implements OnInit {
+  product!: Product;
 
   ngOnInit(): void {
-    this.product = new ProductModel(
+    this.product = new Product(
       'Ball',
       9.99,
       'https://images.pexels.com/photos/27408124/pexels-photo-27408124.jpeg',
