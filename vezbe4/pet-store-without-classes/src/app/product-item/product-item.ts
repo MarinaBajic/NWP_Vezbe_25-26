@@ -2,12 +2,12 @@ import { CurrencyPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-product',
+  selector: 'app-product-item',
   imports: [CurrencyPipe],
-  templateUrl: './product.html',
-  styleUrl: './product.css',
+  templateUrl: './product-item.html',
+  styleUrl: './product-item.css',
 })
-export class Product implements OnInit {
+export class ProductItem implements OnInit {
   name!: string;
   price!: number;
   imageUrl!: string;
