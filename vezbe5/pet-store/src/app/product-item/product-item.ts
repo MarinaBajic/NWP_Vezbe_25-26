@@ -1,18 +1,18 @@
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { Component, input, OnInit, output } from '@angular/core';
-import { ProductModel } from '../model/product-model';
+import { Product } from '../model/product';
 
 @Component({
-  selector: 'app-product',
+  selector: 'app-product-item',
   imports: [CurrencyPipe, CommonModule],
-  templateUrl: './product.html',
-  styleUrl: './product.css',
+  templateUrl: './product-item.html',
+  styleUrl: './product-item.css',
 })
-export class Product implements OnInit {
+export class ProductItem implements OnInit {
 
-  product = input<ProductModel>(new ProductModel(0, '', 0, '', false));
+  product = input<Product>(new Product(0, '', 0, '', false));
 
-  changeQuantityEvent = output<{ product: ProductModel, increase: boolean }>();
+  changeQuantityEvent = output<{ product: Product, increase: boolean }>();
 
   productClasses!: { [key: string]: boolean }
   productStyles!: { [key: string]: string }
