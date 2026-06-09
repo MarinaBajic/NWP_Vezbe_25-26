@@ -1,8 +1,8 @@
 <div class="d-flex gap-3 justify-content-center my-4">
   @for (product of products; track product.id; let i = $index) {
-    <app-product [product]="product" (changeQuantityEvent)="changeQuantity($event)">
+    <app-product-item [product]="product" (changeQuantityEvent)="changeQuantity($event)">
       <p>This is item number {{ i + 1 }}</p>
-    </app-product>
+    </app-product-item>
   }
 </div>
 <p>There are in total {{ sumProductsInCart }} products in your cart.</p>

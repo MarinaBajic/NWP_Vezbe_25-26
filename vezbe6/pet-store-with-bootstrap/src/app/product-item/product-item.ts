@@ -1,19 +1,18 @@
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { Component, input, OnInit, output } from '@angular/core';
-import { ProductModel } from '../model/product-model';
-import { ProductQuantityChange } from '../model/product-quantity-change';
+import { Product } from '../model/product';
 
 @Component({
-  selector: 'app-product',
+  selector: 'app-product-item',
   imports: [CurrencyPipe, CommonModule],
-  templateUrl: './product.html',
-  styleUrl: './product.css',
+  templateUrl: './product-item.html',
+  styleUrl: './product-item.css',
 })
-export class Product implements OnInit {
+export class ProductItem implements OnInit {
 
-  product = input<ProductModel>(new ProductModel(0, '', 0, '', false));
+  product = input<Product>(new Product(0, '', 0, '', false));
 
-  changeQuantityEvent = output<ProductQuantityChange>();
+  changeQuantityEvent = output<{ product: Product, increase: boolean }>();
 
   productClasses!: { [key: string]: boolean }
   productStyles!: { [key: string]: string }
@@ -28,11 +27,13 @@ export class Product implements OnInit {
   }
 
   increaseQuantity(): void {
-    this.changeQuantityEvent.emit({product: this.product(), amountToChange: 1});
+    // this.product().quantityInCart++;
+    this.changeQuantityEvent.emit({product: this.product(), increase: true});
   }
 
   decreaseQuantity(): void {
-    this.changeQuantityEvent.emit({product: this.product(), amountToChange: -1});
+    // this.product().quantityInCart--;
+    this.changeQuantityEvent.emit({product: this.product(), increase: false});
   }
 
   canDecreaseQuantity(): boolean {
