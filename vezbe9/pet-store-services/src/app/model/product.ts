@@ -1,4 +1,4 @@
-export class ProductModel {
+export class Product {
 	public quantityInCart: number;
 
 	constructor(

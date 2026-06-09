@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { ProductModel } from '../model/product-model';
+import { Product } from '../model/product';
 import { ProductService } from '../services/product-service';
 
 @Component({
@@ -19,7 +19,7 @@ export class CreateProduct {
       return;
     }
     this.message = '';
-    const product: ProductModel = productForm.value.product;
+    const product: Product = productForm.value.product;
     console.log('Creating product', product);
     this.productService.addProduct(product);
   }

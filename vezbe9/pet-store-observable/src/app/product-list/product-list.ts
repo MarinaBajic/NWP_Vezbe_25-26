@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ProductModel } from '../model/product-model';
-import { Product } from '../product/product';
+import { Product } from '../model/product';
+import { ProductItem } from '../product-item/product-item';
 import { AsyncPipe } from '@angular/common';
 import { ProductQuantityChange } from '../model/product-quantity-change';
 import { ProductService } from '../services/product-service';
@@ -8,13 +8,13 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
-  imports: [Product, AsyncPipe],
+  imports: [ProductItem, AsyncPipe],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css',
 })
 export class ProductList implements OnInit {
 
-  products!: Observable<Array<ProductModel>>;
+  products!: Observable<Array<Product>>;
 
   private productService = inject(ProductService);
 

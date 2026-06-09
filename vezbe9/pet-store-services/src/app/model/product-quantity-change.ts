@@ -1,6 +1,6 @@
-import { ProductModel } from "./product-model";
+import { Product } from "./product";
 
 export interface ProductQuantityChange {
-    product: ProductModel;
+    product: Product;
     amountToChange: number;
 }
