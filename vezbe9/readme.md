@@ -1,5 +1,7 @@
 ## Praktične vežbe 9 - Servisi i Asinhrone operacije
 
+Implementacije zadataka se nalaze u direktorijumima `vezbe9/pet-store-services` i `vezbe9/pet-store-observable`.
+
 ### Pet Store servisi
 
 Sledeći zadatak se može uraditi kao nadogradnja aplikacije `vezbe9/pet-store-base`. Aplikacija sadrži listu proizvoda (slično rešenju petih vežbi) i _template-driven_ formu za unos novog proizvoda.
@@ -22,8 +24,7 @@ Sledeći zadatak se može uraditi kao nadogradnja aplikacije `vezbe9/pet-store-s
 3. U servis klasi izmeniti `changeQuantity()` metodu tako da vraća novi _Observable_ objekat.
 4. U komponenti `ProductList` dodati _Observer_ pri pozivu `changeQuantity()` metode iz servis klase.
 5. U servis klasi u `addProduct()` metodi dodati da metoda vraća novi _Observable_ objekat sa unetim proizvodom.
-5. U `CreateProduct` komponenti dodati _Observer_ pri pozivu `addProduct()` metode iz servis klase. Ukoliko je proizvod uspešno dodat resetovati formu.
-
+6. U `CreateProduct` komponenti dodati _Observer_ pri pozivu `addProduct()` metode iz servis klase. Ukoliko je proizvod uspešno dodat resetovati formu.
 
 ### Kako pokrenuti projekat?
 
