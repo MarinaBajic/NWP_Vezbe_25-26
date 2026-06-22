@@ -31,7 +31,7 @@ U datoteci `app.routes.ts` definisati sledeće rute koje predstavljaju različit
 
 1. Klonirati repozitorijum na lokalnu mašinu.
 2. Ispratiti sva uputstva iz `vezbe4/angular_setup.md` za podešavanje nvm, npm, node i angular cli.
-3. Otvoriti terminal i navigirati se do root direktorijuma Angular projekta (npr. `vezbe9/pet-store-base`).
+3. Otvoriti terminal i navigirati se do root direktorijuma Angular projekta (npr. `vezbe10/pet-store-http`).
 4. Izvršiti `npm install` kako bi se instalirale sve zavisnosti.
 5. Ako postoje ranjivosti, izvršiti `npm audit fix` kako bi se ispravile.
 6. Izvršiti `ng serve` kako bi se pokrenuo server.
